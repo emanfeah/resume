@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    environment{
+        demo="1.1"
+    }
+    stages {
+        stage('Fetch Code') {
+            steps {
+                echo 'Fetch Code -$demo'
+                sh 'echo "this is my first jenkinus"'
+                sh 'echo "-$demo"'
+            }
+        }
+         stage('Build') {
+            steps {
+                echo 'Build'
+            }
+        }
+         stage('Test') {
+            steps {
+                echo 'Test'
+            }
+        }
+        
+         stage('Deploy') {
+            steps {
+                echo 'Deploy'
+            }
+        }
+    }
+}
